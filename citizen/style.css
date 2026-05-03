@@ -1,0 +1,739 @@
+/* ==========================================
+   Emergency Response Management System
+   Custom Stylesheet
+   ========================================== */
+
+/* Variables & Base Setup */
+:root {
+    --primary-red: #D32F2F;
+    --primary-dark: #212121;
+    --primary-white: #F9F9F9;
+    --primary-blue: #1976D2;
+    --success-green: #2E7D32;
+    --warning-orange: #F57C00;
+    --danger-red: #C62828;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-dark);
+    background: var(--primary-white);
+}
+
+/* Utility Classes */
+.text-red {
+    color: var(--primary-red) !important;
+}
+
+.bg-red {
+    background-color: var(--primary-red) !important;
+}
+
+.bg-dark-custom {
+    background-color: var(--primary-dark) !important;
+}
+
+/* ==========================================
+   Preloader
+   ========================================== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #212121 0%, #424242 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
+.preloader-icon {
+    font-size: 4rem;
+    color: var(--primary-red);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+#preloader h4 {
+    color: white;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Navbar
+   ========================================== */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--primary-red) !important;
+    transform: translateX(3px);
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #212121 0%, #424242 100%);
+    padding-top: 80px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.emergency-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-icon {
+    font-size: 5rem;
+    color: var(--primary-red);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-item p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Pulse Button Animation */
+.pulse-btn {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animated Background Shapes */
+.bg-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 15s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-red);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary-blue);
+    top: 60%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    background: #FFC107;
+    bottom: 10%;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+/* ==========================================
+   Category Cards
+   ========================================== */
+.category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.fire-card:hover {
+    border-color: var(--primary-red);
+    background: linear-gradient(135deg, #fff5f5 0%, white 100%);
+}
+
+.medical-card:hover {
+    border-color: var(--primary-blue);
+    background: linear-gradient(135deg, #e3f2fd 0%, white 100%);
+}
+
+.police-card:hover {
+    border-color: var(--primary-dark);
+    background: linear-gradient(135deg, #f5f5f5 0%, white 100%);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.fire-card .card-icon {
+    color: var(--primary-red);
+}
+
+.medical-card .card-icon {
+    color: var(--primary-blue);
+}
+
+.police-card .card-icon {
+    color: var(--primary-dark);
+}
+
+/* ==========================================
+   Features Section
+   ========================================== */
+.features-section {
+    padding: 5rem 0;
+}
+
+/* ==========================================
+   How It Works Section
+   ========================================== */
+.how-it-works {
+    padding: 5rem 0;
+}
+
+.step-box {
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-red), var(--danger-red));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   Login Page
+   ========================================== */
+.login-page {
+    background: linear-gradient(135deg, #212121 0%, #424242 100%);
+    min-height: 100vh;
+}
+
+.login-section {
+    position: relative;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.login-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+}
+
+.user-type-selector .btn {
+    border-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.user-type-selector .btn:hover,
+.user-type-selector .btn.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: white;
+}
+
+.input-group-text {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.form-control {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary-red);
+    color: white;
+    box-shadow: 0 0 0 0.25rem rgba(211, 47, 47, 0.25);
+}
+
+.divider {
+    text-align: center;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* ==========================================
+   Dashboard - Stats Cards
+   ========================================== */
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.total-emergencies .stat-icon {
+    background: var(--primary-red);
+}
+
+.resolved .stat-icon {
+    background: var(--success-green);
+}
+
+.pending .stat-icon {
+    background: var(--warning-orange);
+}
+
+.response-time .stat-icon {
+    background: var(--primary-blue);
+}
+
+.assigned .stat-icon {
+    background: #9C27B0;
+}
+
+.en-route .stat-icon {
+    background: #FF9800;
+}
+
+.completed .stat-icon {
+    background: var(--success-green);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   Sidebar
+   ========================================== */
+.sidebar {
+    padding-top: 2rem;
+    background: var(--primary-dark);
+}
+
+.sidebar .nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: rgba(211, 47, 47, 0.2);
+    color: white;
+}
+
+/* ==========================================
+   Report Page
+   ========================================== */
+.report-section {
+    background: var(--primary-white);
+    padding: 5rem 0;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   My Reports Page
+   ========================================== */
+.my-reports-section {
+    padding: 5rem 0;
+}
+
+.filter-tabs .nav-link {
+    color: #666;
+    border: none;
+}
+
+.filter-tabs .nav-link.active {
+    background: var(--primary-red);
+    color: white;
+}
+
+.report-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.report-id {
+    font-size: 0.85rem;
+    color: #999;
+    font-family: monospace;
+}
+
+.report-body h5 {
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+.report-meta {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.report-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* ==========================================
+   Responder Dashboard - Emergency Items
+   ========================================== */
+.emergency-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.emergency-item:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.emergency-item.critical {
+    border-left-color: var(--danger-red);
+}
+
+.emergency-item.high {
+    border-left-color: var(--warning-orange);
+}
+
+.emergency-item.medium {
+    border-left-color: var(--primary-blue);
+}
+
+.emergency-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    background: var(--primary-red);
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.footer {
+    background: var(--primary-dark);
+    padding: 3rem 0 2rem;
+}
+
+.footer a {
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--primary-red) !important;
+    padding-left: 5px;
+}
+
+/* ==========================================
+   Animations
+   ========================================== */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px var(--primary-red), 0 0 20px var(--primary-red);
+    }
+    to {
+        text-shadow: 0 0 20px var(--primary-red), 0 0 30px var(--primary-red), 0 0 40px var(--primary-red);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-60px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding: 5rem 0 3rem;
+    }
+
+    .display-3 {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .category-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .sidebar {
+        position: relative !important;
+        height: auto !important;
+    }
+
+    main {
+        margin-left: 0 !important;
+    }
+}
+
+/* ==========================================
+   Button Animations
+   ========================================== */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background: var(--primary-red);
+    color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--danger-red);
+}
+
